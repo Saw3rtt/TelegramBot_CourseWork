@@ -41,7 +41,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                 long chatId = update.message().chat().id();
 
                 if (text.equals("/start")) {
-                    telegramBot.execute(new SendMessage(chatId, "Добро пожаловать! Чем могу помочь?"));
+                    telegramBot.execute(new SendMessage(chatId, "Привет! Я ваш телеграм бот. Чем могу помочь?"));
                  }
             }
         });
