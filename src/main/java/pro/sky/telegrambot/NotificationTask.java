@@ -16,17 +16,28 @@ public class NotificationTask {
     @Column(name = "chat_id", nullable = false)
     private Long chatId;
 
+    @Column(name = "notification_text", columnDefinition = "TEXT")
+    private String notificationText;
+
     @Column(name = "notification_date_time", nullable = false)
     private LocalDateTime notificationDatetime;
 
-    public NotificationTask(Long id, Long chatId, LocalDateTime notificationDatetime) {
+    public NotificationTask(Long id, String chatId, LocalDateTime notificationDatetime) {
         this.id = id;
-        this.chatId = chatId;
+        this.chatId = Long.valueOf(chatId);
         this.notificationDatetime = notificationDatetime;
     }
 
     public Long getChatId() {
         return chatId;
+    }
+
+    public String getNotificationText() {
+        return notificationText;
+    }
+
+    public void setNotificationText(String notificationText) {
+        this.notificationText = notificationText;
     }
 
     public void setChatId(Long chatId) {
